@@ -36,13 +36,13 @@ func New() ILimiterMiddleWare {
 }
 
 func (l *Limiter) IsRequestValid() gin.HandlerFunc {
-	return func(ctx *gin.Context) { 
+	return func(ctx *gin.Context) {
 		l.currentRequestCount++
 
 		if l.currentRequestCount < l.requestLimit {
 			ctx.Next()
 		} else {
-			ctx.AbortWithStatusJSON(400, json{
+			ctx.AbortWithStatusJSON(429, json{
 				"message": "Not Allowed",
 			})
 		}
