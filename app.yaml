@@ -11,7 +11,7 @@ automatic_scaling:
 
 build:
 
- service_account: my-service-account@my-project.iam.gserviceaccount.com
+ service_account: 665634275458-compute@developer.gserviceaccount.com
 
  logs_bucket: my-logs-bucket
 
